@@ -1,7 +1,7 @@
 ---
 title: "Week 02: COVID Visualization Activity"
 date: "September, 11 2023"
-author: "**`[[`**Your Name**`]]`**"
+author: "Tianyu Wu"
 ---
 
 Today, we'll be working with a data set related to COVID.
@@ -36,6 +36,21 @@ covid_data_count |>
 ```
 
 1. Write code for a plot and describe what you observe?
+```{r}
+covid_data_race |> 
+  filter(state == "AK") |> 
+  ggplot(aes(x = date, y = White_count, color = count_type)) + geom_line()
+```
+I made a line plot with "covid_date_race" data set, it describes how many covid cases, deaths, and hosp in White people as time goes on. The line of cases has large slope, and the line of deaths and hosp nearly close to zero compare with the line of cases.
+
 2. Are there any conclusions you can draw?
+
+The difference between the count of deaths and hosp with the count of cases are growing larger as time goes on. So cases are increasing expoentially, however, the count of death and hosp has relatively less growth.
+
 3. What were you not able to do due to not having the R knowledge?
+
+I am not able to compare different races count with each other in one plot.
+
 4. What other data would be useful to better understand this data?
+
+"covid_data_orig" is also useful to present the count of cases, deaths, and hosp in White.
